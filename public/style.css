@@ -1,4 +1,30 @@
 /* Write your code from here**/
-body { font-family: Arial, sans-serif; text-align: center; }
-#quiz-container { width: 50%; margin: auto; padding: 20px; border: 1px solid black; }
-button { margin-top: 10px; }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #e096ef, #7098de);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#quiz-container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+button {
+    background: #ff7eb3;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
