@@ -9,10 +9,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             document.getElementById("question").innerText = questions[index].question;
             let optionsDiv = document.getElementById("options");
             optionsDiv.innerHTML = "";
-            questions[index].options.forEach((opt, i) => {
+            questions[index].options.forEach((opt) => {
                 let btn = document.createElement("button");
                 btn.innerText = opt;
-                btn.onclick = () => { if (i === questions[index].answer) score++; index++; loadQuestion(); };
+                btn.onclick = () => {
+                    if (opt === questions[index].answer) { 
+                        score++; 
+                    }
+                    index++; 
+                    loadQuestion();
+                };
                 optionsDiv.appendChild(btn);
             });
         } else {
