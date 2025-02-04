@@ -2,18 +2,20 @@
 document.addEventListener("DOMContentLoaded", async () => {
     let response = await fetch('/questions');
     let questions = await response.json();
+    let maxQuestions = Math.min(10, questions.length);
+    let selectedQuestions = questions.slice(0, maxQuestions);
     let index = 0, score = 0;
 
     function loadQuestion() {
-        if (index < questions.length) {
-            document.getElementById("question").innerText = questions[index].question;
+        if (index < selectedQuestions.length) {
+            document.getElementById("question").innerText = selectedQuestions[index].question;
             let optionsDiv = document.getElementById("options");
             optionsDiv.innerHTML = "";
-            questions[index].options.forEach((opt) => {
+            selectedQuestions[index].options.forEach((opt) => {
                 let btn = document.createElement("button");
                 btn.innerText = opt;
                 btn.onclick = () => {
-                    if (opt === questions[index].answer) { 
+                    if (opt === selectedQuestions[index].answer) { 
                         score++; 
                     }
                     index++; 
@@ -22,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 optionsDiv.appendChild(btn);
             });
         } else {
-            document.getElementById("quiz-container").innerHTML = `<h2>Your Score: ${score}/${questions.length}</h2>`;
+            document.getElementById("quiz-container").innerHTML = `<h2>Your Score: ${score}/${selectedQuestions.length}</h2>`;
         }
     }
     loadQuestion();
