@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
@@ -12,30 +12,24 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+    background: linear-gradient(135deg, #1f1c2c, #928DAB);
     color: white;
-    overflow: hidden;
 }
 
 #quiz-container {
-    width: 55%;
+    width: 60%;
     padding: 30px;
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(12px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    position: relative;
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 h1 {
-    font-size: 32px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 28px;
     margin-bottom: 20px;
-    text-shadow: 0 0 10px #00e6e6;
 }
 
 #question {
@@ -52,43 +46,20 @@ h1 {
 }
 
 button {
-    background: #0ff;
+    background: #ff4d4d;
     border: none;
     padding: 12px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
-    color: black;
+    color: white;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 0 10px #00e6e6;
-    position: relative;
-    overflow: hidden;
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
 }
 
 button:hover {
-    background: #00b3b3;
+    background: #e63946;
     transform: scale(1.05);
-    box-shadow: 0 0 15px #00f5f5;
-}
-
-button::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: radial-gradient(circle, rgba(0, 255, 255, 0.3) 10%, transparent 50%);
-    transition: 0.6s ease-out;
-    transform: translate(-50%, -50%) scale(0);
-    border-radius: 50%;
-}
-
-button:active::before {
-    transform: translate(-50%, -50%) scale(1);
 }
 
 #progress-bar {
@@ -98,17 +69,15 @@ button:active::before {
     border-radius: 5px;
     margin-bottom: 15px;
     position: relative;
-    overflow: hidden;
 }
 
 #progress {
     display: block;
     height: 100%;
     width: 0%;
-    background: linear-gradient(45deg, #0ff, #00f5f5);
+    background: #ff4d4d;
     border-radius: 5px;
     transition: width 0.3s ease-in-out;
-    box-shadow: 0 0 8px #00e6e6;
 }
 
 @keyframes fadeIn {
